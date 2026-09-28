@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- ปรับตามขนาดอุปกรณ์ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Memories 💗</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                180deg,
+                #ffc5d3 0%,
+                #ff9fb8 100%
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow-x: hidden;
+
+            padding: clamp(20px, 5vw, 60px);
+        }
+
+
+        /* =========================
+           หัวใจตกแต่ง
+        ========================= */
+
+        .heart {
+            position: fixed;
+
+            color: rgba(255,255,255,0.65);
+
+            font-size: clamp(20px, 4vw, 35px);
+
+            pointer-events: none;
+        }
+
+        .heart1 {
+            top: 15%;
+            left: 8%;
+        }
+
+        .heart2 {
+            top: 25%;
+            right: 8%;
+        }
+
+        .heart3 {
+            bottom: 18%;
+            left: 12%;
+        }
+
+        .heart4 {
+            bottom: 12%;
+            right: 15%;
+        }
+
+
+        /* =========================
+           กล่องหลัก
+        ========================= */
+
+        .container {
+            width: 100%;
+
+            max-width: 600px;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           หัวข้อ
+        ========================= */
+
+        .title {
+            font-size: clamp(38px, 10vw, 65px);
+
+            line-height: 1;
+
+            font-weight: 800;
+
+            color: white;
+
+            text-shadow:
+                3px 3px 0 #d97896,
+                -1px -1px 0 #d97896,
+                1px -1px 0 #d97896,
+                -1px 1px 0 #d97896;
+
+            margin-bottom: 12px;
+        }
+
+
+        .subtitle {
+            color: white;
+
+            font-size: clamp(16px, 4vw, 22px);
+
+            margin-bottom: clamp(20px, 5vw, 30px);
+        }
+
+
+        /* =========================
+           กล่องตัวเลือก
+        ========================= */
+
+        .card {
+            width: 100%;
+
+            padding: clamp(25px, 6vw, 40px)
+                     clamp(18px, 5vw, 30px);
+
+            background: rgba(255, 245, 248, 0.92);
+
+            border-radius: clamp(25px, 6vw, 38px);
+
+            box-shadow:
+                0 15px 40px rgba(180, 75, 105, 0.18);
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .card-title {
+            color: #d45d7d;
+
+            font-size: clamp(21px, 5vw, 28px);
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+
+        .card-text {
+            color: #d98ca2;
+
+            font-size: clamp(13px, 3.5vw, 16px);
+
+            margin-bottom: clamp(20px, 5vw, 28px);
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           ตัวเลือก
+        ========================= */
+
+        .choices {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: clamp(15px, 4vw, 20px);
+        }
+
+
+        .choice {
+            display: flex;
+
+            align-items: center;
+
+            width: 100%;
+
+            min-height: clamp(85px, 20vw, 105px);
+
+            padding: clamp(15px, 4vw, 22px);
+
+            background: #fff0f5;
+
+            border: 2px solid #f2b2c4;
+
+            border-radius: clamp(20px, 5vw, 28px);
+
+            text-decoration: none;
+
+            transition: 0.2s;
+
+            box-shadow:
+                0 5px 15px rgba(180, 75, 105, 0.08);
+        }
+
+
+        .choice:hover {
+            transform: translateY(-3px);
+
+            background: #ffe5ed;
+
+            border-color: #e87998;
+
+            box-shadow:
+                0 8px 20px rgba(180, 75, 105, 0.15);
+        }
+
+
+        /* =========================
+           ไอคอน
+        ========================= */
+
+        .choice-icon {
+            width: clamp(55px, 14vw, 70px);
+
+            height: clamp(55px, 14vw, 70px);
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #ffd1df;
+
+            border-radius: 20px;
+
+            font-size: clamp(27px, 7vw, 38px);
+
+            margin-right: clamp(12px, 4vw, 20px);
+        }
+
+
+        /* =========================
+           ข้อความตัวเลือก
+        ========================= */
+
+        .choice-content {
+            text-align: left;
+
+            flex: 1;
+        }
+
+
+        .choice-title {
+            color: #d45d7d;
+
+            font-size: clamp(18px, 4.5vw, 24px);
+
+            font-weight: bold;
+
+            margin-bottom: 5px;
+        }
+
+
+        .choice-description {
+            color: #d99aaa;
+
+            font-size: clamp(12px, 3.2vw, 15px);
+
+            line-height: 1.4;
+        }
+
+
+        /* ลูกศร */
+
+        .arrow {
+            color: #e87998;
+
+            font-size: clamp(22px, 6vw, 30px);
+
+            margin-left: 8px;
+        }
+
+
+        /* =========================
+           ข้อความด้านล่าง
+        ========================= */
+
+        .bottom-text {
+            color: #d89aaa;
+
+            font-size: clamp(11px, 3vw, 14px);
+
+            margin-top: clamp(20px, 5vw, 28px);
+        }
+
+
+        /* =========================
+           หน้าจอเล็กมาก
+        ========================= */
+
+        @media (max-width: 360px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 22px 16px;
+            }
+
+            .choice {
+                padding: 12px;
+            }
+
+            .choice-icon {
+                margin-right: 10px;
+            }
+
+            .arrow {
+                margin-left: 4px;
+            }
+        }
+
+
+        /* =========================
+           แท็บเล็ต / คอม
+        ========================= */
+
+        @media (min-width: 768px) {
+
+            .container {
+                max-width: 650px;
+            }
+
+            .choices {
+                gap: 22px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- หัวใจตกแต่ง -->
+
+    <div class="heart heart1">♡</div>
+    <div class="heart heart2">♡</div>
+    <div class="heart heart3">♡</div>
+    <div class="heart heart4">♡</div>
+
+
+    <main class="container">
+
+
+        <!-- หัวข้อ -->
+
+        <div class="title">
+            Our Memories 💗
+        </div>
+
+
+        <div class="subtitle">
+            เลือกสิ่งที่อยากเปิดดูนะ
+        </div>
+
+
+        <!-- กล่อง -->
+
+        <section class="card">
+
+
+            <div class="card-title">
+                เลือกได้เลย 💕
+            </div>
+
+
+            <div class="card-text">
+                เราเตรียมความทรงจำไว้ให้เลือก 2 แบบ
+            </div>
+
+
+            <div class="choices">
+
+
+                <!-- =====================
+                     ตัวเลือกที่ 1
+                ====================== -->
+
+                <a
+                    href="page3.html"
+                    class="choice"
+                >
+
+                    <div class="choice-icon">
+                        💌
+                    </div>
+
+
+                    <div class="choice-content">
+
+                        <div class="choice-title">
+                            ความในใจ
+                        </div>
+
+                        <div class="choice-description">
+                            สิ่งที่อยากบอกเธอในโอกาสครบรอบ 1 เดือน
+                        </div>
+
+                    </div>
+
+
+                    <div class="arrow">
+                        ›
+                    </div>
+
+                </a>
+
+
+
+                <!-- =====================
+                     ตัวเลือกที่ 2
+                ====================== -->
+
+                <a
+                    href="page4.html"
+                    class="choice"
+                >
+
+                    <div class="choice-icon">
+                        🎬
+                    </div>
+
+
+                    <div class="choice-content">
+
+                        <div class="choice-title">
+                            วิดีโอของเรา
+                        </div>
+
+                        <div class="choice-description">
+                            คลิปวิดีโอที่อยากให้เธอดูในวันครบรอบ
+                        </div>
+
+                    </div>
+
+
+                    <div class="arrow">
+                        ›
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+            <div class="bottom-text">
+                เลือกได้ตามใจเลยนะ 💗
+            </div>
+
+
+        </section>
+
+    </main>
+
+</body>
+</html>
