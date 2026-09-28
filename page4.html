@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Video 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #ffeef5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: clamp(16px, 4vw, 40px);
+    overflow-x: hidden;
+}
+
+/* หัวใจตกแต่ง */
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    font-size: clamp(18px, 4vw, 30px);
+    opacity: 0.5;
+    animation: float 6s infinite ease-in-out;
+}
+
+.heart:nth-child(1) {
+    left: 8%;
+    top: 15%;
+}
+
+.heart:nth-child(2) {
+    right: 10%;
+    top: 25%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 15%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+    right: 15%;
+    bottom: 20%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* กล่องหลัก */
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 700px;
+
+    text-align: center;
+}
+
+/* หัวข้อ */
+h1 {
+    margin: 0 0 clamp(8px, 2vw, 12px);
+
+    color: #d94f7c;
+
+    font-size: clamp(28px, 7vw, 46px);
+    line-height: 1.2;
+}
+
+.subtitle {
+    color: #8f536b;
+
+    font-size: clamp(14px, 3.5vw, 19px);
+
+    margin-bottom: clamp(18px, 4vw, 28px);
+}
+
+/* การ์ดวิดีโอ */
+.video-card {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    padding: clamp(12px, 4vw, 26px);
+
+    border-radius: clamp(18px, 5vw, 30px);
+
+    box-shadow:
+        0 12px 30px rgba(170, 70, 100, 0.18);
+
+    backdrop-filter: blur(8px);
+}
+
+/* วิดีโอ */
+video {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: clamp(12px, 4vw, 24px);
+
+    background: #000;
+
+    box-shadow:
+        0 8px 20px rgba(170, 70, 100, 0.18);
+}
+
+/* ปุ่ม */
+.go-button {
+    display: block;
+
+    width: min(100%, 400px);
+
+    margin: clamp(18px, 4vw, 24px) auto 0;
+
+    padding: clamp(12px, 3vw, 16px)
+             clamp(20px, 5vw, 32px);
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #e96b95;
+
+    color: white;
+
+    font-size: clamp(15px, 4vw, 20px);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(217, 79, 124, 0.25);
+
+    transition: 0.2s;
+}
+
+.go-button:hover {
+    transform: translateY(-2px);
+    background: #df5b88;
+}
+
+.go-button:active {
+    transform: scale(0.97);
+}
+
+/* คลิปที่สอง */
+.second-video {
+    display: none;
+
+    width: 100%;
+
+    margin-top: clamp(24px, 5vw, 34px);
+}
+
+.second-video.show {
+    display: block;
+}
+
+.second-title {
+    color: #d94f7c;
+
+    font-size: clamp(18px, 5vw, 26px);
+
+    font-weight: bold;
+
+    margin-bottom: clamp(10px, 3vw, 16px);
+}
+
+/* มือถือ */
+@media (max-width: 480px) {
+
+    body {
+        padding: 14px 10px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .video-card {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    video {
+        border-radius: 14px;
+    }
+
+    .go-button {
+        width: 100%;
+    }
+}
+
+/* แท็บเล็ต */
+@media (min-width: 481px) and (max-width: 900px) {
+
+    .container {
+        max-width: 650px;
+    }
+}
+
+/* คอม */
+@media (min-width: 901px) {
+
+    .container {
+        max-width: 700px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+</div>
+
+<div class="container">
+
+    <h1>🎬 Our Video</h1>
+
+    <div class="subtitle">
+        มาดูวิดีโอของเรากัน 💗
+    </div>
+
+    <div class="video-card">
+
+        <!-- คลิปแรก -->
+        <video controls playsinline preload="metadata">
+            <source
+                src="lv_7516543208210304309_20260928235152.mp4"
+                type="video/mp4"
+            >
+            เบราว์เซอร์นี้ไม่รองรับวิดีโอ
+        </video>
+
+        <!-- ปุ่ม -->
+        <button class="go-button" onclick="startNextVideo()">
+            เริ่มกันเลย Go Go Go🚗
+        </button>
+
+        <!-- คลิปที่สอง -->
+        <div class="second-video" id="secondVideo">
+
+            <div class="second-title">
+                💗 Go Go Go!
+            </div>
+
+            <video
+                id="nextVideo"
+                controls
+                playsinline
+                preload="metadata"
+            >
+                <source
+                    src="2026-09-29-002646744.mp4"
+                    type="video/mp4"
+                >
+                เบราว์เซอร์นี้ไม่รองรับวิดีโอ
+            </video>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function startNextVideo() {
+
+    const secondVideo =
+        document.getElementById("secondVideo");
+
+    const video =
+        document.getElementById("nextVideo");
+
+    secondVideo.classList.add("show");
+
+    secondVideo.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    video.play();
+}
+</script>
+
+</body>
+</html>
