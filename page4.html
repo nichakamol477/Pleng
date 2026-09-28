@@ -11,15 +11,16 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    overflow-x: hidden;
+    min-height: 100%;
 }
 
 body {
-    margin: 0;
     min-height: 100vh;
-    width: 100%;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #ffd6e7, #ffeef5);
 
@@ -28,10 +29,14 @@ body {
     align-items: center;
 
     padding: clamp(16px, 4vw, 40px);
+
     overflow-x: hidden;
 }
 
-/* หัวใจตกแต่ง */
+/* =========================
+   Hearts
+========================= */
+
 .hearts {
     position: fixed;
     inset: 0;
@@ -71,7 +76,8 @@ body {
 }
 
 @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -80,7 +86,10 @@ body {
     }
 }
 
-/* กล่องหลัก */
+/* =========================
+   Main
+========================= */
+
 .container {
     position: relative;
     z-index: 1;
@@ -91,31 +100,40 @@ body {
     text-align: center;
 }
 
-/* หัวข้อ */
+/* =========================
+   Title
+========================= */
+
 h1 {
     margin: 0 0 clamp(8px, 2vw, 12px);
 
     color: #d94f7c;
 
     font-size: clamp(28px, 7vw, 46px);
+
     line-height: 1.2;
 }
 
 .subtitle {
+    margin-bottom: clamp(18px, 4vw, 28px);
+
     color: #8f536b;
 
     font-size: clamp(14px, 3.5vw, 19px);
 
-    margin-bottom: clamp(18px, 4vw, 28px);
+    line-height: 1.5;
 }
 
-/* การ์ดวิดีโอ */
+/* =========================
+   Video Card
+========================= */
+
 .video-card {
     width: 100%;
 
-    background: rgba(255, 255, 255, 0.78);
-
     padding: clamp(12px, 4vw, 26px);
+
+    background: rgba(255, 255, 255, 0.78);
 
     border-radius: clamp(18px, 5vw, 30px);
 
@@ -125,7 +143,10 @@ h1 {
     backdrop-filter: blur(8px);
 }
 
-/* วิดีโอ */
+/* =========================
+   Videos
+========================= */
+
 video {
     display: block;
 
@@ -136,15 +157,18 @@ video {
 
     margin: 0 auto;
 
-    border-radius: clamp(12px, 4vw, 24px);
-
     background: #000;
+
+    border-radius: clamp(12px, 4vw, 24px);
 
     box-shadow:
         0 8px 20px rgba(170, 70, 100, 0.18);
 }
 
-/* ปุ่ม */
+/* =========================
+   Button
+========================= */
+
 .go-button {
     display: block;
 
@@ -152,8 +176,9 @@ video {
 
     margin: clamp(18px, 4vw, 24px) auto 0;
 
-    padding: clamp(12px, 3vw, 16px)
-             clamp(20px, 5vw, 32px);
+    padding:
+        clamp(12px, 3vw, 16px)
+        clamp(20px, 5vw, 32px);
 
     border: none;
 
@@ -176,15 +201,19 @@ video {
 }
 
 .go-button:hover {
-    transform: translateY(-2px);
     background: #df5b88;
+    transform: translateY(-2px);
 }
 
 .go-button:active {
     transform: scale(0.97);
 }
 
-/* คลิปที่สอง */
+/* =========================
+   Second Video
+   ซ่อนไว้ตั้งแต่เริ่ม
+========================= */
+
 .second-video {
     display: none;
 
@@ -198,16 +227,19 @@ video {
 }
 
 .second-title {
+    margin-bottom: clamp(10px, 3vw, 16px);
+
     color: #d94f7c;
 
     font-size: clamp(18px, 5vw, 26px);
 
     font-weight: bold;
-
-    margin-bottom: clamp(10px, 3vw, 16px);
 }
 
-/* มือถือ */
+/* =========================
+   Mobile
+========================= */
+
 @media (max-width: 480px) {
 
     body {
@@ -229,10 +261,14 @@ video {
 
     .go-button {
         width: 100%;
+        min-height: 48px;
     }
 }
 
-/* แท็บเล็ต */
+/* =========================
+   Tablet
+========================= */
+
 @media (min-width: 481px) and (max-width: 900px) {
 
     .container {
@@ -240,7 +276,10 @@ video {
     }
 }
 
-/* คอม */
+/* =========================
+   Desktop
+========================= */
+
 @media (min-width: 901px) {
 
     .container {
@@ -252,12 +291,14 @@ video {
 
 <body>
 
+<!-- ตกแต่งหัวใจ -->
 <div class="hearts">
     <div class="heart">💗</div>
     <div class="heart">💕</div>
     <div class="heart">💗</div>
     <div class="heart">💕</div>
 </div>
+
 
 <div class="container">
 
@@ -267,28 +308,54 @@ video {
         มาดูวิดีโอของเรากัน 💗
     </div>
 
+
     <div class="video-card">
 
-        <!-- คลิปแรก -->
-        <video controls playsinline preload="metadata">
+        <!-- =================================
+             คลิปแรก
+        ================================== -->
+
+        <video
+            controls
+            playsinline
+            preload="metadata"
+        >
             <source
                 src="lv_7516543208210304309_20260928235152.mp4"
                 type="video/mp4"
             >
+
             เบราว์เซอร์นี้ไม่รองรับวิดีโอ
         </video>
 
-        <!-- ปุ่ม -->
-        <button class="go-button" onclick="startNextVideo()">
+
+        <!-- =================================
+             ปุ่มไปคลิปที่สอง
+        ================================== -->
+
+        <button
+            type="button"
+            class="go-button"
+            onclick="startNextVideo()"
+        >
             เริ่มกันเลย Go Go Go🚗
         </button>
 
-        <!-- คลิปที่สอง -->
-        <div class="second-video" id="secondVideo">
+
+        <!-- =================================
+             คลิปที่สอง
+             ตอนเปิดหน้าจะยังไม่เห็น
+        ================================== -->
+
+        <div
+            class="second-video"
+            id="secondVideo"
+        >
 
             <div class="second-title">
                 💗 Go Go Go!
             </div>
+
 
             <video
                 id="nextVideo"
@@ -296,11 +363,14 @@ video {
                 playsinline
                 preload="metadata"
             >
+
                 <source
                     src="2026-09-29-002646744.mp4"
                     type="video/mp4"
                 >
+
                 เบราว์เซอร์นี้ไม่รองรับวิดีโอ
+
             </video>
 
         </div>
@@ -309,24 +379,38 @@ video {
 
 </div>
 
+
 <script>
+
 function startNextVideo() {
 
+    /* หาองค์ประกอบคลิปที่สอง */
     const secondVideo =
         document.getElementById("secondVideo");
 
     const video =
         document.getElementById("nextVideo");
 
+
+    /* ทำให้คลิปที่สองปรากฏ */
     secondVideo.classList.add("show");
 
+
+    /* เลื่อนไปหาคลิปที่สอง */
     secondVideo.scrollIntoView({
         behavior: "smooth",
         block: "center"
     });
 
-    video.play();
+
+    /* เล่นคลิปที่สอง */
+    video.play().catch(() => {
+        /* ถ้าเบราว์เซอร์ไม่อนุญาต autoplay
+           ผู้ใช้สามารถกดปุ่ม Play ในวิดีโอได้ */
+    });
+
 }
+
 </script>
 
 </body>
