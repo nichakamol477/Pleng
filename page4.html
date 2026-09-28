@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Video 💗</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<title>🎬 วิดีโอของเรา</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
 
 html,
 body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
-    min-height: 100%;
 }
 
 body {
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-
-    background: linear-gradient(
-        135deg,
-        #ffd6e7,
-        #ffeef5
-    );
+    min-height: 100dvh;
 
     display: flex;
     justify-content: center;
@@ -35,382 +35,259 @@ body {
 
     padding: clamp(16px, 4vw, 40px);
 
-    overflow-x: hidden;
-}
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e5,
+            #fff0f5,
+            #ffc6dc
+        );
 
-/* =========================
-   Hearts
-========================= */
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-.hearts {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.heart {
-    position: absolute;
-
-    font-size: clamp(18px, 4vw, 30px);
-
-    opacity: 0.5;
-
-    animation: float 6s infinite ease-in-out;
-}
-
-.heart:nth-child(1) {
-    left: 8%;
-    top: 15%;
-}
-
-.heart:nth-child(2) {
-    right: 10%;
-    top: 25%;
-    animation-delay: 1s;
-}
-
-.heart:nth-child(3) {
-    left: 15%;
-    bottom: 15%;
-    animation-delay: 2s;
-}
-
-.heart:nth-child(4) {
-    right: 15%;
-    bottom: 20%;
-    animation-delay: 3s;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
+    color: #7b4055;
 }
 
 
 /* =========================
-   Container
+   MAIN
 ========================= */
 
 .container {
-    position: relative;
-    z-index: 1;
-
-    width: 100%;
-    max-width: 700px;
-
+    width: min(100%, 650px);
     text-align: center;
 }
 
 
 /* =========================
-   Title
+   TITLE
 ========================= */
 
 h1 {
-    margin: 0 0 10px;
+    margin: 0 0 clamp(10px, 2vw, 16px);
 
-    color: #d94f7c;
+    font-size: clamp(24px, 6vw, 38px);
 
-    font-size: clamp(28px, 7vw, 46px);
-
-    line-height: 1.2;
+    color: #d6537c;
 }
 
 .subtitle {
     margin-bottom: clamp(18px, 4vw, 28px);
 
-    color: #8f536b;
-
-    font-size: clamp(14px, 3.5vw, 19px);
-
-    line-height: 1.5;
+    font-size: clamp(14px, 3.5vw, 18px);
 }
 
 
 /* =========================
-   Video Card
+   VIDEO
 ========================= */
 
-.video-card {
+.video-box {
     width: 100%;
 
-    padding: clamp(12px, 4vw, 26px);
+    background: #000;
 
-    background: rgba(255, 255, 255, 0.78);
+    border-radius: clamp(16px, 4vw, 28px);
 
-    border-radius: clamp(18px, 5vw, 30px);
+    overflow: hidden;
 
     box-shadow:
-        0 12px 30px rgba(170, 70, 100, 0.18);
-
-    backdrop-filter: blur(8px);
+        0 12px 35px
+        rgba(170, 70, 100, 0.22);
 }
-
-
-/* =========================
-   Video
-========================= */
 
 video {
     display: block;
 
     width: 100%;
-    max-width: 100%;
-
     height: auto;
 
-    margin: 0 auto;
+    max-height: 70dvh;
+
+    object-fit: contain;
 
     background: #000;
-
-    border-radius: clamp(12px, 4vw, 24px);
-
-    box-shadow:
-        0 8px 20px rgba(170, 70, 100, 0.18);
 }
 
 
 /* =========================
-   Go Button
+   BUTTON
 ========================= */
 
-.go-button {
-    display: block;
-
-    width: min(100%, 400px);
-
-    margin: clamp(18px, 4vw, 24px) auto 0;
-
-    padding:
-        clamp(12px, 3vw, 16px)
-        clamp(20px, 5vw, 32px);
+.start-button,
+.continue-button {
 
     border: none;
 
     border-radius: 999px;
 
-    background: #e96b95;
+    padding:
+        clamp(12px, 3vw, 16px)
+        clamp(22px, 6vw, 34px);
+
+    margin-top: clamp(18px, 4vw, 26px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f27da6,
+            #d9537d
+        );
 
     color: white;
 
-    font-size: clamp(15px, 4vw, 20px);
+    font-size: clamp(14px, 3.5vw, 18px);
 
-    font-weight: bold;
+    font-weight: 700;
 
     cursor: pointer;
 
     box-shadow:
-        0 7px 18px rgba(217, 79, 124, 0.25);
+        0 8px 20px
+        rgba(210, 75, 115, 0.25);
 
-    transition: 0.2s;
+    transition:
+        transform 0.2s ease;
 }
 
-.go-button:hover {
-    background: #df5b88;
-    transform: translateY(-2px);
-}
-
-.go-button:active {
-    transform: scale(0.97);
+.start-button:active,
+.continue-button:active {
+    transform: scale(0.96);
 }
 
 
 /* =========================
-   Second Video
-   ซ่อนตั้งแต่เริ่ม
+   SECOND VIDEO
 ========================= */
 
-.second-video {
+#video2-section {
     display: none;
 
-    width: 100%;
-
-    margin-top: clamp(24px, 5vw, 34px);
-}
-
-.second-video.show {
-    display: block;
+    margin-top: clamp(20px, 5vw, 30px);
 }
 
 
 /* =========================
-   Second Video Title
+   FINAL MESSAGE
 ========================= */
 
-.second-title {
-    margin-bottom: clamp(10px, 3vw, 16px);
-
-    color: #d94f7c;
-
-    font-size: clamp(18px, 5vw, 26px);
-
-    font-weight: bold;
-}
-
-
-/* =========================
-   Final Message
-   ซ่อนตั้งแต่เริ่ม
-========================= */
-
-.final-message {
+#finalMessage {
     display: none;
 
-    margin-top: clamp(20px, 5vw, 28px);
+    margin-top: clamp(20px, 5vw, 30px);
 
-    padding:
-        clamp(16px, 4vw, 22px)
-        clamp(14px, 4vw, 20px);
+    animation:
+        fadeIn 0.8s ease;
+}
 
-    background: rgba(255, 230, 240, 0.85);
+#finalMessage h2 {
 
-    border-radius: clamp(16px, 4vw, 22px);
+    margin-bottom: 10px;
 
-    color: #d94f7c;
+    color: #d6537c;
 
-    font-size: clamp(15px, 4vw, 20px);
+    font-size: clamp(21px, 5vw, 30px);
+}
 
-    font-weight: bold;
+#finalMessage p {
+
+    margin: 6px 0;
+
+    font-size: clamp(14px, 3.5vw, 18px);
 
     line-height: 1.7;
-
-    box-shadow:
-        0 8px 20px rgba(170, 70, 100, 0.12);
 }
 
-.final-message.show {
-    display: block;
 
-    animation: messageAppear 0.6s ease;
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.continue-button {
+    display: none;
 }
 
-.final-title {
-    margin-bottom: 5px;
 
-    font-size: clamp(19px, 5vw, 25px);
-}
+/* =========================
+   ANIMATION
+========================= */
 
-@keyframes messageAppear {
+@keyframes fadeIn {
 
     from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(15px);
     }
 
     to {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 
 /* =========================
-   Mobile
+   SMALL SCREEN
 ========================= */
 
 @media (max-width: 480px) {
 
     body {
-        padding: 14px 10px;
-    }
-
-    .container {
-        max-width: 100%;
-    }
-
-    .video-card {
-        padding: 10px;
-
-        border-radius: 20px;
+        padding: 18px;
     }
 
     video {
-        border-radius: 14px;
+        max-height: 65dvh;
     }
 
-    .go-button {
-        width: 100%;
-        min-height: 48px;
-    }
 }
 
 
 /* =========================
-   Tablet
+   LANDSCAPE
 ========================= */
 
-@media (min-width: 481px) and (max-width: 900px) {
+@media (orientation: landscape) {
 
-    .container {
-        max-width: 650px;
+    body {
+        padding: 12px;
     }
-}
 
-
-/* =========================
-   Desktop
-========================= */
-
-@media (min-width: 901px) {
-
-    .container {
-        max-width: 700px;
+    video {
+        max-height: 68dvh;
     }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
-<!-- =========================
-     Floating Hearts
-========================= -->
-
-<div class="hearts">
-
-    <div class="heart">💗</div>
-    <div class="heart">💕</div>
-    <div class="heart">💗</div>
-    <div class="heart">💕</div>
-
-</div>
-
-
-<!-- =========================
-     Main
-========================= -->
 
 <div class="container">
 
-    <h1>
-        🎬 Our Video
-    </h1>
+
+    <h1>🎬 วิดีโอของเรา</h1>
 
     <div class="subtitle">
-        มาดูวิดีโอของเรากัน 💗
+        พร้อมดูแล้วใช่ไหมคะ 💗
     </div>
 
 
-    <div class="video-card">
+    <!-- VIDEO 1 -->
 
-
-        <!-- =========================
-             คลิปแรก
-        ========================== -->
+    <div class="video-box">
 
         <video
-            id="firstVideo"
+            id="video1"
             controls
             playsinline
             preload="metadata"
@@ -425,37 +302,26 @@ video {
 
         </video>
 
-
-        <!-- =========================
-             ปุ่ม Go Go Go
-        ========================== -->
-
-        <button
-            type="button"
-            class="go-button"
-            onclick="startNextVideo()"
-        >
-            เริ่มกันเลย Go Go Go🚗
-        </button>
+    </div>
 
 
-        <!-- =========================
-             คลิปที่สอง
-             ซ่อนไว้ก่อน
-        ========================== -->
+    <button
+        id="startButton"
+        class="start-button"
+        onclick="startSecondVideo()"
+    >
+        เริ่มกันเลย Go Go Go🚗
+    </button>
 
-        <div
-            class="second-video"
-            id="secondVideo"
-        >
 
-            <div class="second-title">
-                💗 Go Go Go!
-            </div>
+    <!-- VIDEO 2 -->
 
+    <div id="video2-section">
+
+        <div class="video-box">
 
             <video
-                id="nextVideo"
+                id="video2"
                 controls
                 playsinline
                 preload="metadata"
@@ -470,29 +336,35 @@ video {
 
             </video>
 
+        </div>
 
-            <!-- =========================
-                 ข้อความหลังคลิป 2 จบ
-            ========================== -->
 
-            <div
-                class="final-message"
-                id="finalMessage"
+        <!-- FINAL MESSAGE -->
+
+        <div id="finalMessage">
+
+            <h2>
+                เย้ คลิปจบแล้ว 💗
+            </h2>
+
+            <p>
+                ถึงจะสั้น ๆ แต่มีความหมายสำหรับเค้ามากนะคะ
+            </p>
+
+            <p>
+                เค้าตั้งใจทำมันให้เธอเลยนะคะ😝
+            </p>
+
+
+            <!-- CONTINUE BUTTON -->
+
+            <button
+                id="continueButton"
+                class="continue-button"
+                onclick="goToFinalVideo()"
             >
-
-                <div class="final-title">
-                    เย้ คลิปจบแล้ว 💗
-                </div>
-
-                <div>
-                    ถึงจะสั้น ๆ แต่มีความหมายสำหรับเค้ามากนะคะ
-                </div>
-
-                <div>
-                    เค้าตั้งใจทำมันให้เธอเลยนะคะ😝
-                </div>
-
-            </div>
+                ดูต่ออีกนิด
+            </button>
 
         </div>
 
@@ -503,65 +375,92 @@ video {
 
 <script>
 
+
 /* =========================
-   ตัวแปร
+   ELEMENTS
 ========================= */
 
-const secondVideo =
-    document.getElementById("secondVideo");
+const video1 =
+    document.getElementById("video1");
 
-const nextVideo =
-    document.getElementById("nextVideo");
+const video2 =
+    document.getElementById("video2");
+
+const video2Section =
+    document.getElementById("video2-section");
 
 const finalMessage =
     document.getElementById("finalMessage");
 
+const startButton =
+    document.getElementById("startButton");
+
+const continueButton =
+    document.getElementById("continueButton");
+
 
 /* =========================
-   กด Go Go Go
+   START VIDEO 2
 ========================= */
 
-function startNextVideo() {
+function startSecondVideo() {
 
-    /* แสดงคลิปที่สอง */
-    secondVideo.classList.add("show");
+    video2Section.style.display = "block";
 
-    /* เลื่อนไปหาคลิปที่สอง */
-    secondVideo.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
+    startButton.style.display = "none";
 
-    /* เล่นคลิปที่สอง */
-    nextVideo.play().catch(() => {
-        /* ถ้าอุปกรณ์ไม่อนุญาต
-           ผู้ใช้สามารถกด Play เองได้ */
-    });
+    video2.currentTime = 0;
+
+    video2.play().catch(function () {});
+
+    setTimeout(function () {
+
+        video2.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 150);
 
 }
 
 
 /* =========================
-   คลิปที่สองจบ
+   VIDEO 2 จบ
 ========================= */
 
-nextVideo.addEventListener(
-    "ended",
-    function () {
+video2.addEventListener("ended", function () {
 
-        /* แสดงข้อความ */
-        finalMessage.classList.add("show");
+    finalMessage.style.display = "block";
 
-        /* เลื่อนไปหาข้อความ */
+    continueButton.style.display = "inline-block";
+
+    setTimeout(function () {
+
         finalMessage.scrollIntoView({
             behavior: "smooth",
             block: "center"
         });
 
-    }
-);
+    }, 100);
+
+});
+
+
+/* =========================
+   ไปวิดีโอสุดท้าย
+========================= */
+
+function goToFinalVideo() {
+
+    window.location.href =
+        "page4-final.html";
+
+}
 
 </script>
 
+
 </body>
+
 </html>
