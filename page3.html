@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ความในใจ 💌</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #ffd6e7, #ffeef5);
+    overflow: hidden;
+}
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    font-size: clamp(20px, 5vw, 32px);
+    opacity: 0.5;
+    animation: float 6s infinite ease-in-out;
+}
+
+.heart:nth-child(1) {
+    left: 8%;
+    top: 15%;
+}
+
+.heart:nth-child(2) {
+    right: 10%;
+    top: 25%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 15%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+    right: 15%;
+    bottom: 20%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background: rgba(255,255,255,0.82);
+    padding: clamp(28px, 7vw, 50px) clamp(20px, 6vw, 40px);
+    border-radius: 30px;
+    box-shadow: 0 12px 30px rgba(170,70,100,0.18);
+}
+
+.icon {
+    font-size: clamp(45px, 12vw, 70px);
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #d94f7c;
+    font-size: clamp(25px, 7vw, 38px);
+    margin: 0 0 15px;
+}
+
+p {
+    color: #8f536b;
+    font-size: clamp(16px, 4vw, 20px);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    border-radius: 999px;
+    padding: 13px 28px;
+    font-size: clamp(15px, 4vw, 18px);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.yes {
+    background: #e96b95;
+    color: white;
+    box-shadow: 0 7px 18px rgba(217,79,124,0.25);
+}
+
+.no {
+    background: #f3dce5;
+    color: #a65c77;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .card {
+        border-radius: 24px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="icon">💌</div>
+
+        <h1>ฮั่นแน่... 👀</h1>
+
+        <p>
+            อยากรู้ความในใจล่ะสิอ้วม 🫳🏻🩷
+        </p>
+
+        <div class="buttons">
+
+            <button class="yes" onclick="goYes()">
+                ช่าย 😛
+            </button>
+
+            <button class="no" onclick="goNo()">
+                ม่าย 🙂‍↔️
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function goYes() {
+    window.location.href = "page3-ready.html";
+}
+
+function goNo() {
+    window.location.href = "page2.html";
+}
+</script>
+
+</body>
+</html>
