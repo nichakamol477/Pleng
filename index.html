@@ -2,6 +2,8 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ทำให้เว็บปรับตามขนาดหน้าจอ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Happy 1 Month 💗</title>
@@ -13,82 +15,138 @@
             padding: 0;
         }
 
+        html, body {
+            width: 100%;
+            min-height: 100%;
+        }
+
         body {
             min-height: 100vh;
-            font-family: "Arial", sans-serif;
-            background: linear-gradient(180deg, #ffc1d0, #ff9db5);
+            min-height: 100dvh;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                180deg,
+                #ffc5d3 0%,
+                #ff9fb8 100%
+            );
+
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+
+            overflow-x: hidden;
+            padding: clamp(20px, 5vw, 60px);
         }
 
-        /* หัวใจลอย */
+
+        /* =========================
+           หัวใจตกแต่ง
+        ========================= */
+
         .heart {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 25px;
-            animation: float 5s infinite ease-in-out;
+            position: fixed;
+            color: rgba(255,255,255,0.65);
+            font-size: clamp(20px, 4vw, 35px);
+            pointer-events: none;
         }
 
-        .heart:nth-child(1) {
+        .heart1 {
             top: 15%;
+            left: 8%;
+        }
+
+        .heart2 {
+            top: 25%;
+            right: 8%;
+        }
+
+        .heart3 {
+            bottom: 18%;
             left: 12%;
         }
 
-        .heart:nth-child(2) {
-            top: 25%;
+        .heart4 {
+            bottom: 12%;
             right: 15%;
-            animation-delay: 1s;
         }
 
-        .heart:nth-child(3) {
-            bottom: 20%;
-            left: 18%;
-            animation-delay: 2s;
-        }
 
-        .heart:nth-child(4) {
-            bottom: 15%;
-            right: 20%;
-            animation-delay: 3s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
+        /* =========================
+           กล่องหลัก
+        ========================= */
 
         .container {
-            width: 90%;
-            max-width: 500px;
+            width: 100%;
+            max-width: 520px;
+
             text-align: center;
+
             position: relative;
             z-index: 2;
         }
 
+
+        /* =========================
+           Happy
+        ========================= */
+
         .title {
-            font-size: clamp(45px, 12vw, 75px);
-            font-weight: 800;
+            font-size: clamp(48px, 13vw, 78px);
+
             line-height: 0.95;
-            color: #ffffff;
+
+            font-weight: 800;
+
+            color: white;
+
             text-shadow:
                 3px 3px 0 #d97896,
                 -1px -1px 0 #d97896,
                 1px -1px 0 #d97896,
                 -1px 1px 0 #d97896;
-            margin-bottom: 10px;
         }
 
+
+        /* =========================
+           รูปภาพ
+        ========================= */
+
+        .main-image {
+            display: block;
+
+            width: min(65vw, 260px);
+
+            max-width: 100%;
+
+            height: auto;
+
+            margin: clamp(12px, 3vw, 20px) auto;
+
+            object-fit: contain;
+
+            border-radius: 20px;
+
+            filter: drop-shadow(
+                0 8px 15px rgba(170, 70, 100, 0.18)
+            );
+        }
+
+
+        /* =========================
+           1 Month
+        ========================= */
+
         .month {
-            font-size: clamp(40px, 11vw, 65px);
-            color: #fff;
+            font-size: clamp(38px, 10vw, 65px);
+
+            line-height: 1;
+
             font-weight: 700;
+
+            color: white;
+
             text-shadow:
                 3px 3px 0 #8f79c9,
                 -1px -1px 0 #8f79c9,
@@ -96,119 +154,247 @@
                 -1px 1px 0 #8f79c9;
         }
 
+
         .sparkle {
-            font-size: 35px;
-            margin: 15px 0;
+            font-size: clamp(22px, 6vw, 35px);
+
+            margin: clamp(10px, 2vw, 18px) 0;
         }
 
+
+        /* =========================
+           กล่องใส่รหัส
+        ========================= */
+
         .card {
-            margin-top: 25px;
-            padding: 38px 25px;
-            background: rgba(255, 245, 248, 0.9);
-            border-radius: 35px;
-            box-shadow: 0 15px 40px rgba(180, 75, 105, 0.18);
+            width: 100%;
+
+            padding: clamp(25px, 6vw, 40px)
+                     clamp(18px, 5vw, 30px);
+
+            margin-top: clamp(15px, 4vw, 25px);
+
+            background: rgba(255, 245, 248, 0.92);
+
+            border-radius: clamp(25px, 6vw, 38px);
+
+            box-shadow:
+                0 15px 40px rgba(180, 75, 105, 0.18);
+
             backdrop-filter: blur(10px);
         }
 
+
         .card h2 {
             color: #d45d7d;
-            font-size: 25px;
+
+            font-size: clamp(20px, 5vw, 27px);
+
             margin-bottom: 8px;
         }
 
+
         .card p {
             color: #d98ca2;
-            font-size: 15px;
-            margin-bottom: 22px;
+
+            font-size: clamp(13px, 3.5vw, 16px);
+
+            margin-bottom: clamp(18px, 4vw, 25px);
         }
+
+
+        /* =========================
+           ช่องรหัส
+        ========================= */
 
         .password {
             width: 100%;
-            height: 58px;
+
+            height: clamp(50px, 13vw, 60px);
+
             border: 2px solid #f2b2c4;
-            border-radius: 20px;
+
+            border-radius: clamp(15px, 4vw, 22px);
+
             background: #fff0f5;
+
             text-align: center;
-            font-size: 25px;
-            letter-spacing: 10px;
+
+            font-size: clamp(20px, 6vw, 27px);
+
+            letter-spacing: clamp(6px, 2vw, 12px);
+
             color: #c95478;
+
             outline: none;
         }
 
+
         .password:focus {
             border-color: #d97896;
-            box-shadow: 0 0 0 4px rgba(217, 120, 150, 0.12);
+
+            box-shadow:
+                0 0 0 4px rgba(217,120,150,0.12);
         }
+
 
         .password::placeholder {
             color: #dfafbd;
-            letter-spacing: 8px;
+
+            letter-spacing: clamp(5px, 2vw, 9px);
         }
 
+
+        /* =========================
+           ปุ่ม
+        ========================= */
+
         button {
-            margin-top: 20px;
             width: 100%;
-            height: 52px;
+
+            height: clamp(48px, 12vw, 55px);
+
+            margin-top: clamp(14px, 4vw, 20px);
+
             border: none;
-            border-radius: 18px;
+
+            border-radius: clamp(15px, 4vw, 20px);
+
             background: #e87998;
+
             color: white;
-            font-size: 17px;
+
+            font-size: clamp(15px, 4vw, 18px);
+
             font-weight: bold;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
+
         button:hover {
             background: #d96182;
+
             transform: translateY(-2px);
         }
 
+
+        /* =========================
+           ข้อความรหัสผิด
+        ========================= */
+
         .error {
-            height: 22px;
-            margin-top: 13px;
+            min-height: 22px;
+
+            margin-top: 12px;
+
             color: #d94d70;
-            font-size: 14px;
+
+            font-size: clamp(12px, 3vw, 14px);
+
             font-weight: bold;
         }
 
+
         .hint {
-            margin-top: 18px;
-            font-size: 12px;
+            margin-top: 15px;
+
             color: #d89aaa;
+
+            font-size: clamp(10px, 2.8vw, 13px);
         }
+
+
+        /* =========================
+           หน้าจอเล็กมาก
+        ========================= */
+
+        @media (max-width: 360px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .main-image {
+                width: 55vw;
+            }
+
+            .card {
+                padding: 22px 16px;
+            }
+
+        }
+
+
+        /* =========================
+           แท็บเล็ต / คอม
+        ========================= */
+
+        @media (min-width: 768px) {
+
+            .container {
+                max-width: 600px;
+            }
+
+            .main-image {
+                width: 280px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- หัวใจตกแต่ง -->
-    <div class="heart">♡</div>
-    <div class="heart">♡</div>
-    <div class="heart">♡</div>
-    <div class="heart">♡</div>
+    <!-- ของตกแต่ง -->
+    <div class="heart heart1">♡</div>
+    <div class="heart heart2">♡</div>
+    <div class="heart heart3">♡</div>
+    <div class="heart heart4">♡</div>
 
-    <div class="container">
 
+    <main class="container">
+
+        <!-- หัวข้อ -->
         <div class="title">
             Happy
         </div>
 
+
+        <!-- รูปที่เพิ่มเข้ามา -->
+        <img
+            src="1788701156165.jpg"
+            alt="Our memory"
+            class="main-image"
+        >
+
+
+        <!-- ครบรอบ 1 เดือน -->
         <div class="month">
             1 Month
         </div>
+
 
         <div class="sparkle">
             ✨ 💗 ✨
         </div>
 
-        <div class="card">
 
-            <h2>ครบรอบ 1 เดือน 💕</h2>
+        <!-- กล่องรหัส -->
+        <section class="card">
+
+            <h2>
+                ครบรอบ 1 เดือน 💕
+            </h2>
 
             <p>
                 ยินดีต้อนรับเข้าสู่ความทรงจำของเรานะ
             </p>
+
 
             <input
                 id="password"
@@ -220,52 +406,64 @@
                 autocomplete="off"
             >
 
+
             <button onclick="checkPassword()">
                 เปิดความทรงจำ 💗
             </button>
 
+
             <div id="error" class="error"></div>
+
 
             <div class="hint">
                 ใส่รหัส 6 หลักเพื่อไปหน้าถัดไป
             </div>
 
-        </div>
-    </div>
+        </section>
+
+    </main>
+
 
     <script>
 
         function checkPassword() {
 
-            const password = document.getElementById("password").value;
-            const error = document.getElementById("error");
+            const password =
+                document.getElementById("password").value;
 
-            // รหัสที่ถูกต้อง
+            const error =
+                document.getElementById("error");
+
             const correctPassword = "310869";
+
 
             if (password === correctPassword) {
 
-                // ถ้ารหัสถูก → ไปหน้าที่ 2
+                // รหัสถูก → ไปหน้าที่ 2
                 window.location.href = "page2.html";
 
             } else {
 
-                // ถ้ารหัสผิด → อยู่หน้าเดิม
-                error.textContent = "รหัสไม่ถูกต้อง ลองใหม่อีกครั้งนะ 💗";
+                // รหัสผิด → ไม่ไปหน้าต่อ
+                error.textContent =
+                    "รหัสไม่ถูกต้อง ลองใหม่อีกครั้งนะ 💗";
 
                 document.getElementById("password").value = "";
 
             }
         }
 
-        // กด Enter เพื่อส่งรหัสได้
-        document.getElementById("password").addEventListener("keydown", function(event) {
 
-            if (event.key === "Enter") {
-                checkPassword();
-            }
+        // กด Enter เพื่อยืนยันรหัส
+        document
+            .getElementById("password")
+            .addEventListener("keydown", function(event) {
 
-        });
+                if (event.key === "Enter") {
+                    checkPassword();
+                }
+
+            });
 
     </script>
 
