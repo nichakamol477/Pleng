@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The boss of my heart 💌</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: clamp(14px, 4vw, 40px);
+
+    font-family: Arial, "Noto Sans Thai", sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.65), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(255,255,255,.5), transparent 25%),
+        linear-gradient(135deg, #ffd6e7, #ffeef5);
+
+    color: #704456;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   Floating Hearts
+========================= */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    font-size: clamp(18px, 4vw, 30px);
+    opacity: .45;
+    animation: float 6s ease-in-out infinite;
+}
+
+.heart:nth-child(1) {
+    left: 7%;
+    top: 12%;
+}
+
+.heart:nth-child(2) {
+    right: 8%;
+    top: 22%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 10%;
+    bottom: 18%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+    right: 10%;
+    bottom: 12%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================
+   Main
+========================= */
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   Title
+========================= */
+
+.title {
+    text-align: center;
+    margin-bottom: clamp(18px, 4vw, 30px);
+}
+
+.title h1 {
+    margin: 0;
+
+    color: #d94f7c;
+    font-size: clamp(28px, 7vw, 52px);
+    line-height: 1.2;
+
+    text-shadow: 0 3px 10px rgba(217,79,124,.15);
+}
+
+.title p {
+    margin: 10px 0 0;
+
+    color: #a15c77;
+    font-size: clamp(13px, 3vw, 17px);
+}
+
+
+/* =========================
+   Message Card
+========================= */
+
+.message-card {
+    width: 100%;
+
+    background: rgba(255,255,255,.86);
+
+    border-radius: clamp(20px, 5vw, 34px);
+
+    padding:
+        clamp(22px, 5vw, 45px)
+        clamp(18px, 5vw, 48px);
+
+    box-shadow:
+        0 15px 40px rgba(170,70,100,.16);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================
+   Message
+========================= */
+
+.message {
+    color: #633f4f;
+
+    font-size: clamp(15px, 2.2vw, 19px);
+
+    line-height: 2;
+
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.message .opening {
+    font-size: clamp(19px, 3vw, 25px);
+    font-weight: bold;
+    color: #d94f7c;
+
+    margin-bottom: 18px;
+}
+
+.message .ending {
+    text-align: center;
+
+    margin-top: 28px;
+
+    color: #d94f7c;
+
+    font-size: clamp(17px, 2.8vw, 23px);
+
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   End Trigger
+========================= */
+
+#endTrigger {
+    height: 20px;
+    margin-top: 25px;
+}
+
+
+/* =========================
+   Photos
+========================= */
+
+.photos {
+    display: none;
+
+    margin-top: clamp(25px, 6vw, 45px);
+
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.photos.show {
+    display: block;
+
+    animation: photosAppear .8s ease forwards;
+}
+
+@keyframes photosAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.photos-title {
+    text-align: center;
+
+    color: #d94f7c;
+
+    font-size: clamp(20px, 4vw, 28px);
+
+    font-weight: bold;
+
+    margin-bottom: clamp(15px, 4vw, 25px);
+}
+
+
+/* =========================
+   Photos
+========================= */
+
+.photo {
+    width: 100%;
+
+    margin-bottom: clamp(18px, 4vw, 28px);
+
+    background: white;
+
+    padding: clamp(8px, 2vw, 14px);
+
+    border-radius: clamp(14px, 3vw, 22px);
+
+    box-shadow:
+        0 10px 25px rgba(170,70,100,.18);
+
+    transition: transform .25s ease;
+}
+
+.photo:hover {
+    transform: translateY(-4px);
+}
+
+.photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    border-radius: clamp(9px, 2vw, 15px);
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   Spotify Button
+========================= */
+
+.spotify-button {
+    display: block;
+
+    width: min(100%, 400px);
+
+    margin:
+        clamp(28px, 6vw, 45px)
+        auto
+        clamp(20px, 4vw, 30px);
+
+    padding:
+        clamp(14px, 3vw, 17px)
+        clamp(20px, 5vw, 30px);
+
+    border: none;
+    border-radius: 999px;
+
+    background: #e96b95;
+
+    color: white;
+
+    font-size: clamp(16px, 4vw, 21px);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px rgba(217,79,124,.28);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.spotify-button:hover {
+    transform: translateY(-3px);
+    background: #df5b88;
+}
+
+.spotify-button:active {
+    transform: scale(.96);
+}
+
+
+/* =========================
+   Back Button
+========================= */
+
+.back-button {
+    display: block;
+
+    width: min(100%, 330px);
+
+    margin:
+        clamp(25px, 5vw, 40px)
+        auto
+        10px;
+
+    padding: clamp(12px, 3vw, 16px);
+
+    border: none;
+    border-radius: 999px;
+
+    background: #f3dce5;
+    color: #a65c77;
+
+    font-size: clamp(15px, 3.5vw, 18px);
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+}
+
+.back-button:active {
+    transform: scale(.97);
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 12px 9px;
+    }
+
+    .message-card {
+        border-radius: 22px;
+        padding: 22px 17px;
+    }
+
+    .message {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .message .opening {
+        font-size: 20px;
+    }
+
+    .message .ending {
+        font-size: 17px;
+    }
+
+    .photo {
+        padding: 7px;
+    }
+
+    .spotify-button {
+        width: 100%;
+        min-height: 50px;
+    }
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (min-width: 481px) and (max-width: 900px) {
+
+    .container {
+        max-width: 720px;
+    }
+
+    .message {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================
+   Desktop
+========================= */
+
+@media (min-width: 901px) {
+
+    .container {
+        max-width: 850px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Floating Hearts -->
+
+<div class="hearts">
+
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+
+</div>
+
+
+<div class="container">
+
+
+    <!-- Title -->
+
+    <div class="title">
+
+        <h1>
+            The boss of my heart💌
+        </h1>
+
+        <p>
+            30 Days of Sunshine ☀️
+        </p>
+
+    </div>
+
+
+    <!-- Message -->
+
+    <div class="message-card">
+
+        <div class="message">
+
+            <div class="opening">
+                30 Days of Sunshine
+            </div>
+
+
+            เราคบกันมา1เดือนทำไมเค้ารู้สึกเราอยู่ด้วยกันมานานมากขนาดนี้นะ เค้าลืมวันลืมเวลาไปเลยว่ามันพึ่งผ่านมาไม่นานมากแต่ถึงยังไงความรู้สึกเค้าก็ยังรู้สึกว่าเราอยุ่ด้วยกันมานานมากอยู่ดีอะนะ
+
+            ขอบคุณนะคะที่เลือกเค้า ขอบคุณที่เกิดมาเป็นคนที่น่ารักขนาดนี้ ขอคุณเธอที่เกิดมาเจอกัน ขอบคุณที่วันนั้นเธอเลือกเค้าเลือกที่จะบอกชอบเค้า ตอนนั้นเค้าเองก็รู้สึกแหละแค่แบบเฉยๆเพราะว่าเค้าไม่ได้อยากรักใครแต่รู้สึกว่ามันมีอะไร ก็นั่นแหละเค้ารอเธอเริ่มก่อนก้าวนึง พอเธอเริ่มก่อนก้าวนึงเค้าเลยเดินเข้าหาเธอต่อ100ก้าว
+
+            เค้าอยากขอบคุณทุกอย่างที่เธอให้เค้า ขอบคุณที่เข้าใจเค้าในทุกเรื่อง เค้าเองก็ชอบเวลาที่ได้อยู่กับเธอได้ทำอะไรกับเธอ เธอให้ความรักเค้าดีมากดีสุดเธอถนอมเค้าดีมากแบบที่เค้าไม่เคยได้รับความรู้สึกที่ถูกให้ความรักเต็มที่ขนาดนี้มากก่อนความรักที่ถูกใส่ใจกลับความรักที่เธอเองก็รักเค้าความรักที่เวลามีปัญหาอะไรทะเลาะกันเธอก็ไม่หนีเค้าเธอเลือกที่จะคุยกับเค้าทันทีแล้วก็ไม่ทิ้งเค้าให้อยู่ตัวคนเดียว
+
+            ถึงบางทีเราจะมีอะไรหลายอย่างที่ไม่เข้าใจกันแต่สุดท้ายเราทั้งคู่ทั้งเค้าและเธอก็คุยกันปรับความเข้าใจกัน เค้าปรับเค้าหาเธอเธอก็เลือกปรับเข้าหาเค้าเหมือนกันเค้าดีใจมากๆที่มีเธอเค้านี่วาสนาดีเนาะ เค้าไม่เคยได้รับอะไรแบบนี้เลย
+
+            เค้าอยากขอบคุณเธอมากขอบคุณพ่อแม่เธอขอบคุณป้าเธอที่เลี้ยงดูคนน่ารักๆแบบเธอจนมาเจอเค้าในตอนนี้
+
+            เค้าสัญญาว่าเค้าจะทำตัวให้ดีขึ้น มีไรก็คุยกับเธอตรงๆ บางทีที่เค้าไม่พูดออกไปเลบเพราะเค้ากลัวที่จะพูดออกไปค่ะ ปกติที่ผ่านมาเค้ารู้สึกอะไรพูดอะไรตรงไปมันก็แย่กว่าเดิมแถมโดนทิ้งให้อยู่ตัวคนเดียวเค้าก็กลัวมันจะเป็นแบบนั้นแต่เค้ารู้นะว่าเธอไม่ทำแบบนั้นกับเค้าแต่ความกลัวของเค้ามันก็นั่นแหละคะทำเค้ากลัวอยู่ดีเค้าเลยใช้เวลาทำใจในการพูดค่อนข้างนาน
+
+            ตัวเค้าเองก็เจออะไรแย่ๆมาเยอะมากเป็นปมหลายอย่างเค้าพยายามปรับตัวแก้ไขตัวเองเพื่อเธอตลอดเลยนะคะ
+
+            เค้าอยากมีเธอไปตลอดอยากมีเธอเป็นคนสุดท้ายในชีวิตเค้าอยากอยู่กับเธอไปเที่ยวกับเธอตื่นมามีเธอก่อนนอนทีเธอ มีเธอทุกเวลา24/7เค้าก็หวังว่าอนาคตชีวิตมหาลัย ชีวิตทำงาน ชีวิตเกษียณก็มีเธอ5555555
+
+            เค้าเว่อไปไหมคะแต่เค้าอยากมีเธอจริงๆนะ อยากมีเธอแค่เธอก็พอแล้วเค้าไม่มองใครอีกเลยเค้ามองแต่เธอแต่เธอ
+
+            บางทีเค้าก็พูดไม่ดีใส่เธอขอโทษนะคะ ขอโทษที่ทำตัวไม่ดีไม่น่ารักใส่เธออยู่บ่อยๆ ขอโทษที่พูดประชดประชันใส่เธอขอโทษที่พูดอะไรที่ไม่ควรพูดขอโทษที่พูดห้วนๆ ขี้น้อยใจ ขี้งอนใส่ ขอโทษในทุกเรื่อง
+
+            ขอโทษที่ชอบพูดแกล้งเธอว่าจะไปหาสาวอื่นหยอกเธอเล่นแบบนั้นเค้าไม่ได้คิดจริงเลยนะคะเค้าพูดเล่นๆแกล้งเธอหยอกเธอไปงั้นทั้งใจเค้าก็มีแค่เธอแค่ขาดเธอไปไม่กี่นาทีไม่กี่วิใจเค้าก็จะขาดแย่แล้วแบบงืมมมมมม แฟนหายไปไหนนนนน เค้าติดแฟนนนนนนน
+
+            เค้ารักเธอสุดๆแบบมากเลยค่ะ เค้าสัญญาว่าจะซื่อสัตย์ต่อเธอ มีแค่เธอไม่นอกใจไม่นอกกาย มีอะไรก็จะบอก ไม่ดื้อไม่ซนค่ะ
+
+            เค้ามีแค่เธอเลยนะเค้าตั้งใจรักเธอมากๆเค้าตั้งใจมีเธอไปตลอดกาล เค้าอยากให้เธอก็อยากมีเค้าเหมือนกัน ไม่ทิ้งเค้าไปไหนได้ไหมคะ ไม่ทิ้งเค้าไว้ตัวคนเดียว
+
+            เค้าอยากให้เราทั้งคู่อยากมีกันไปตลอด อยากให้เธอรักเค้าแบบที่เค้ารักเธอแบบนี้ไปตลอด งืมมม เค้ารักเธอนะคะแฟนของเค้า
+
+            ครอบครัวเธอน่ารักจังเขียนเพลงได้น่ารักขนาดนี้ อิอิงงมั้ยน้าที่เค้าพิมพ์งี้ แต่แฟนเค้าน่ารักจริงๆนะ เป็นเพลงที่ทั้งน่ารักตั้งแต่วันแรกที่เจอจนตอนนี้
+
+            ไม่ได้เป็นแค่เพลงที่น่ารักแต่เป็นเพลงที่ทั้งอบอุ่น อ่อนโยน ใส่ใจ เทคแคร์ งืมรวมๆแล้วดีไปหมดเลย ทุกอย่างมันดีมากๆ มีกันแบบนี้ไปตลอดเลยนะคะ
+
+            เค้ารักเธอมากขึ้นทุกวันอยากมีเธอแบบนี้ตลอดจริงๆ อย่าเบื่อกันนะคะ เค้ารักเธอค่ะ
+
+
+            <div class="ending">
+
+                One month down, forever to go.<br>
+
+                Happy anniversary 1M ✨🩷🫳🏻🫶🏻
+
+            </div>
+
+        </div>
+
+
+        <!-- End Trigger -->
+
+        <div id="endTrigger"></div>
+
+
+        <!-- Photos -->
+
+        <div class="photos" id="photos">
+
+            <div class="photos-title">
+                💗 My favorite moments 💗
+            </div>
+
+
+            <div class="photo">
+
+                <img
+                    src="Videoshot_20260929_014916.jpg"
+                    alt="Our memory 1"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="photo">
+
+                <img
+                    src="Videoshot_20260929_015542.jpg"
+                    alt="Our memory 2"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- Spotify Button -->
+
+            <button
+                class="spotify-button"
+                onclick="openSpotify()"
+            >
+                🎧🎶 
+            </button>
+
+        </div>
+
+
+        <!-- Back -->
+
+        <button
+            class="back-button"
+            onclick="goBack()"
+        >
+            ← กลับไปหน้าความทรงจำ
+        </button>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   Show Photos
+========================= */
+
+const endTrigger = document.getElementById("endTrigger");
+const photos = document.getElementById("photos");
+
+const observer = new IntersectionObserver(
+    function(entries) {
+
+        if (entries[0].isIntersecting) {
+
+            photos.classList.add("show");
+
+            observer.disconnect();
+
+        }
+
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+observer.observe(endTrigger);
+
+
+/* =========================
+   Spotify
+========================= */
+
+function openSpotify() {
+
+    window.location.href =
+        "https://open.spotify.com/track/6PAS5UAJQLYgzRJu2s2a8U";
+
+}
+
+
+/* =========================
+   Back to page2
+========================= */
+
+function goBack() {
+
+    window.location.href = "page2.html";
+
+}
+
+</script>
+
+</body>
+</html>
