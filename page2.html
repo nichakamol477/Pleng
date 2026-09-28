@@ -96,6 +96,30 @@
 
 
         /* =========================
+           รูปภาพด้านบน
+        ========================= */
+
+        .top-image {
+            display: block;
+
+            width: min(82vw, 420px);
+
+            aspect-ratio: 16 / 9;
+
+            height: auto;
+
+            object-fit: cover;
+
+            margin: 0 auto clamp(18px, 4vw, 28px);
+
+            border-radius: clamp(18px, 4vw, 28px);
+
+            box-shadow:
+                0 10px 25px rgba(170, 70, 100, 0.20);
+        }
+
+
+        /* =========================
            หัวข้อ
         ========================= */
 
@@ -313,6 +337,12 @@
                 padding: 15px;
             }
 
+            .top-image {
+                width: 90%;
+                aspect-ratio: 16 / 9;
+                border-radius: 18px;
+            }
+
             .card {
                 padding: 22px 16px;
             }
@@ -341,6 +371,10 @@
                 max-width: 650px;
             }
 
+            .top-image {
+                width: 420px;
+            }
+
             .choices {
                 gap: 22px;
             }
@@ -361,6 +395,17 @@
 
 
     <main class="container">
+
+
+        <!-- =========================
+             รูปภาพด้านบนสุด
+        ========================= -->
+
+        <img
+            src="IMG_20260913_111004.jpg"
+            alt="Our Memories"
+            class="top-image"
+        >
 
 
         <!-- หัวข้อ -->
@@ -386,7 +431,7 @@
 
 
             <div class="card-text">
-                เราเตรียมความทรงจำไว้ให้เลือก 2 แบบ
+                เค้าเตรียมความทรงจำไว้ให้เลือก 2 แบบ
             </div>
 
 
@@ -410,11 +455,11 @@
                     <div class="choice-content">
 
                         <div class="choice-title">
-                            ความในใจ
+                            ความในใจของเค้า
                         </div>
 
                         <div class="choice-description">
-                            สิ่งที่อยากบอกเธอในโอกาสครบรอบ 1 เดือน
+                            สิ่งที่เค้าอยากบอกเธอในโอกาสครบรอบ 1 เดือน
                         </div>
 
                     </div>
@@ -466,7 +511,7 @@
 
 
             <div class="bottom-text">
-                เลือกได้ตามใจเลยนะ 💗
+                เลือกได้ตามใจเลยนะคะ 💗
             </div>
 
 
