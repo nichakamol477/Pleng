@@ -441,6 +441,18 @@ body {
 <body>
 
 
+<!-- =========================
+     เพลง
+========================= -->
+
+<audio
+    id="backgroundMusic"
+    src="Y2Mate.is - KIDO3008 - UYou Lyric Video.mp3"
+    loop
+    preload="auto"
+></audio>
+
+
 <!-- Floating Hearts -->
 
 <div class="hearts">
@@ -570,7 +582,7 @@ body {
                 class="spotify-button"
                 onclick="openSpotify()"
             >
-                🎧🎶 
+                🎧🎶
             </button>
 
         </div>
@@ -594,28 +606,87 @@ body {
 <script>
 
 /* =========================
+   Background Music
+========================= */
+
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
+
+/*
+   พยายามให้เพลงเริ่มเล่นอัตโนมัติ
+*/
+window.addEventListener("load", function () {
+
+    backgroundMusic.volume = 0.5;
+
+    backgroundMusic.play().catch(function () {
+
+        /*
+           มือถือบางเครื่องจะบล็อก autoplay
+           ถ้ายังไม่ได้มีการแตะหน้าจอ
+        */
+
+    });
+
+});
+
+
+/*
+   ถ้าผู้ใช้แตะหน้าจอครั้งแรก
+   ให้ลองเริ่มเพลงอีกครั้ง
+*/
+
+function startMusic() {
+
+    if (backgroundMusic.paused) {
+
+        backgroundMusic.play().catch(function () {});
+
+    }
+
+}
+
+
+document.addEventListener(
+    "click",
+    startMusic,
+    {
+        once: true
+    }
+);
+
+
+/* =========================
    Show Photos
 ========================= */
 
-const endTrigger = document.getElementById("endTrigger");
-const photos = document.getElementById("photos");
+const endTrigger =
+    document.getElementById("endTrigger");
 
-const observer = new IntersectionObserver(
-    function(entries) {
+const photos =
+    document.getElementById("photos");
 
-        if (entries[0].isIntersecting) {
+const observer =
+    new IntersectionObserver(
 
-            photos.classList.add("show");
+        function(entries) {
 
-            observer.disconnect();
+            if (entries[0].isIntersecting) {
 
+                photos.classList.add("show");
+
+                observer.disconnect();
+
+            }
+
+        },
+
+        {
+            threshold: 0.1
         }
 
-    },
-    {
-        threshold: 0.1
-    }
-);
+    );
 
 observer.observe(endTrigger);
 
@@ -638,7 +709,8 @@ function openSpotify() {
 
 function goBack() {
 
-    window.location.href = "page2.html";
+    window.location.href =
+        "page2.html";
 
 }
 
